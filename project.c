@@ -4,9 +4,8 @@
 #include <unistd.h>
 #include "login.h"
 void splashscreen(void);
- int main(void)
-
- {
+int main(void)
+{
     splashscreen();
     sleep(5);
     system("cls");
@@ -18,6 +17,8 @@ gets(username);
 printf("Enter your password:\n");
 gets(password);
 username_password(username,password);
-return 0; 
+
+    return 0;
 }
+
 
