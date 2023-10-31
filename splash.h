@@ -1,5 +1,6 @@
 #include<stdio.h>
-void splashscreen(void){
+void splashscreen(void)//splash screen function
+{
 printf("#     # ####### #        #####  ####### #     # #######");       
 printf("#  #  # #       #       #     # #     # ##   ## #      ");       
 printf("#  #  # #       #       #       #     # # # # # #      ");       

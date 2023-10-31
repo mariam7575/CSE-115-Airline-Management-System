@@ -3,8 +3,8 @@
 #include "splash.h"
 #include <unistd.h>
 #include "login.h"
-void splashscreen(void);
-void username_password(char username[50],char password[50]);
+void splashscreen(void);//for splash screen
+void username_password(char username[50],char password[50]);//for login option
 int main(void)
 {
     splashscreen();
@@ -18,7 +18,6 @@ gets(username);
 printf("Enter your password:\n");
 gets(password);
 username_password(username,password);
-
     return 0;
 }
 
