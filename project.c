@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include "login.h"
 void splashscreen(void);
+void username_password(char username[50],char password[50]);
 int main(void)
 {
     splashscreen();
