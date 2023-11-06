@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define PASSENGERS 30
 #include "splash.h"
 #include <unistd.h>
 #include "login.h"
@@ -12,6 +11,8 @@ void menu(void);
 int flightSchedule(void);
 void reservation(void);
 void printTicket(void);
+int checkid(int id);
+int  exitScreen(void);
 int main(void)
 {
     splashscreen();
@@ -30,7 +31,12 @@ username_password(username,password);
 flightSchedule();
  reservation();
 printTicket();
+checkid(-1);
+exitScreen();
 return 0;
 }
+
+
+
 
 

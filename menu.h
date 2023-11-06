@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <string.h>
 #define PASSENGERS 30
-typedef struct
+typedef struct //STRUCTURE
 {
     int id; // 4 digits
     char name[30];
     int age;
     char gender[10];
-    int passport; // 5 digits
+    int passport; //5 DIGITS
     char address[30];
     char contact[12];
     int luggage;
@@ -20,10 +20,11 @@ typedef struct
     int bill;
 } airline;
     airline pas[PASSENGERS];
+    int indexx=0;
 
 void menu(void);
 void reservation(void);
-int flightSchedule(int flag);
+int flightSchedule(void);
 int exitScreen(void);
 void printTicket(void);
 void mainMenu(void)
@@ -41,11 +42,9 @@ mainMenu:
     if (mo == 1)
        menu();
     else if (mo == 2)
-       flightSchedule(1);
-    else if (mo == 4)
+       flightSchedule();
+    else if (mo == 3)
        exitScreen();
-    else
-        goto mainMenu;
 }
 void menu(void)
 {
@@ -56,7 +55,7 @@ menu:
     printf("\t\t\t\t\t\t\t\t 1. Reservation\n\n");
     printf("\t\t\t\t\t\t\t\t 2. Print my ticket\n\n");
     printf("\t\t\t\t\t\t\t\t 3. Back to MainMenu\n\n");
-    printf("\t\t\t\t\t\t\t\t--------------------------------------------\n\n");
+    printf("\t\t\t\t\t\t\t\t Enter your choice:  \n\n");
      int mo2;
     scanf("%d", &mo2);
     if (mo2 == 1)
@@ -68,7 +67,7 @@ menu:
     else
         goto menu;
 }
-int flightSchedule(int flag)
+int flightSchedule()
 {
     FILE *fptr;
     fptr=fopen("schedule.txt","r");
@@ -81,14 +80,6 @@ int flightSchedule(int flag)
     }
     printf("\n");
     fclose(fptr);
-    if (flag==1)
-    {
-        mainMenu();
-    }
-    else 
-    {
-        menu();
-    }
     return 0;
 }
 int exitScreen(void)
@@ -108,7 +99,6 @@ int exitScreen(void)
 }
 void reservation(void)
 {
-    int indexx=0;
 reservation:
  printf("\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t*** Welcome to the Reservation System ***\n\n");
     printf("\t\t\t\t\t\t\t\tPassenger ID                      :");
@@ -145,9 +135,6 @@ reservation:
     if (choice == 'Y' || choice == 'y')
     {
         printf("\n\n\t\t\t\t\t\t\t\tYou have filled out all informations correctly...\n");
-        printf("\t\t\t\t\t\t\t\tEnter any key to continue...");
-        fflush(stdin);
-        getchar();
     }
 
     else if (choice == 'N' || choice == 'n')
@@ -157,7 +144,7 @@ reservation:
     }
 selectFlight:
 
-    flightSchedule(1);
+    flightSchedule();
     printf("\t\t\t\t\t\t\t\tEnter Your Choice:     ");
     int choice1;
     scanf("%d", &choice1);
@@ -238,9 +225,12 @@ seatType:
 }
 void printTicket(void)
 {
-printf("\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\tEnter Your Passport ID:     ");
-    int ind;
-    printf("\n\n\n\n\n\n\n\n\n\n\n\n");
+    printf("\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\tEnter Your Passport ID:     ");
+    int id;
+    scanf("%d", &id);
+    int ind = checkid(id);
+    if (ind == -1)
+        printf("NOT FOUND.TRY AGAIN");
     printf("\t\t\t\t\t\t\t\t---------------------------------------------------------\n\n");
     printf("\t\t\t\t\t\t\t\t                     *** Ticket ***\n\n");
     printf("\t\t\t\t\t\t\t\t---------------------------------------------------------\n\n\n\n");
@@ -255,6 +245,16 @@ printf("\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\tEnter Your Passport ID:     ");
     printf("\t\t\t\t\t\t\t\t     Destination               :%s\n\n", pas[ind].destination);
 
     printf("\t\t\t\t\t\t\t\tEnter any key to continue...\n");
-    fflush(stdin);
+    menu();
 }
+int checkid(int id)
+{
+    for (int i = 0; i < indexx; i++)
+        if (pas[i].id == id)
+            return i;
+            else
+                return -1;
+}
+
+
 
