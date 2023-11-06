@@ -1,35 +1,18 @@
 #include<stdio.h>
-void splashscreen(void)//splash screen function
+int splashscreen(void)//splash screen function
 {
-printf("#     # ####### #        #####  ####### #     # #######");       
-printf("#  #  # #       #       #     # #     # ##   ## #      ");       
-printf("#  #  # #       #       #       #     # # # # # #      ");       
-printf("#  #  # #####   #       #       #     # #  #  # #####  ");       
-printf("#  #  # #       #       #       #     # #     # #      ");       
-printf("#  #  # #       #       #     # #     # #     # #      ");       
-printf(" ## ##  ####### #######  #####  ####### #     # #######");       
-                                                              
-                     printf("####### #######");       
-                     printf("   #    #     #");       
-                     printf("   #    #     #");       
-                     printf("   #    #     #");       
-                     printf("   #    #     #");       
-                     printf("   #    #     #");       
-                     printf("   #    ######");       
-                                           
-                           printf("####### #       #     #  #####     #    ####### #######");    
-                           printf("#       #        #   #  #     #   # #   #       #      ");    
-                           printf("#       #         # #   #        #   #  #       #      ");    
-                           printf("#####   #          #     #####  #     # #####   #####  ");    
-                           printf("#       #          #          # ####### #       #      ");    
-                           printf("#       #          #    #     # #     # #       #      ");    
-                           printf("#       #######    #     #####  #     # #       #######");    
-                                                                                      
-                                                   printf("#    ### ######  #       ### #     # #######  #####");  
-                                                  printf("# #    #  #     # #        #  ##    # #       #     #"); 
-                                                 printf("#   #   #  #     # #        #  # #   # #       #     ");  
-                                                printf("#     #  #  ######  #        #  #  #  # #####    #####");  
-                                                printf("#######  #  #   #   #        #  #   # # #             #"); 
-                                                printf("#     #  #  #    #  #        #  #    ## #       #     #"); 
-                                                printf("#     # ### #     # ####### ### #     # #######  ##### "); 
-}                                                                                                        
+      FILE *spl;
+    spl=fopen("splash.txt","r");
+    char ch;
+    ch=fgetc(spl);
+    while (ch!=EOF)
+    {
+        printf("%c",ch);
+        ch=fgetc(spl);
+    }
+    printf("\n");
+    fclose(spl);
+    return 0;
+    fclose(spl);
+    return 0;
+}
