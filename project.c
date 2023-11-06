@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define PASSENGERS 30
 #include "splash.h"
 #include <unistd.h>
 #include "login.h"

@@ -14,9 +14,7 @@ void mainMenu()
     if (mo == 1)
         menu();
     else if (mo == 2)
-        flightSchedule(1);
-    else if (mo == 3)
-        instruction();
+        flightSchedule();
     else if (mo == 4)
         exitScreen();
     else
@@ -28,24 +26,21 @@ void menu()
     printf("\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t*** Welcome to the Menu***\n\n");
     printf("\t\t\t\t\t\t\t\t--------------------------------------------\n\n");
     printf("\t\t\t\t\t\t\t\t 1. Reservation\n\n");
-    printf("\t\t\t\t\t\t\t\t 2. Flight Schedule\n\n");
-    printf("\t\t\t\t\t\t\t\t 3. Print my ticket\n\n");
-    printf("\t\t\t\t\t\t\t\t 4. Back to MainMenu\n\n");
+    printf("\t\t\t\t\t\t\t\t 2. Print my ticket\n\n");
+    printf("\t\t\t\t\t\t\t\t 3. Back to MainMenu\n\n");
     printf("\t\t\t\t\t\t\t\t--------------------------------------------\n\n");
      int mo2;
     scanf("%d", &mo2);
     if (mo2 == 1)
         reservation();
     else if (mo2 == 2)
-        flightSchedule(2);
-    else if (mo2 == 3)
         printTicket();
-    else if (mo2 == 4)
+    else if (mo2 == 3)
         mainMenu();
     else
         goto menu;
 }
-int Flightschedule(void)
+int flightSchedule(void)
 
 {
     FILE *fptr;
@@ -61,7 +56,23 @@ int Flightschedule(void)
     fclose(fptr);
     return 0;
 }
+int exitScreen()
+{
+    FILE *ptr;
+    ptr=fopen("exit.txt","r");
+    char ch;
+    ch=fgetc(ptr);
+    while (ch!=EOF)
+    {
+        printf("%c",ch);
+        ch=fgetc(ptr);
+    }
+    printf("\n");
+    fclose(ptr);
+    return 0;
+}
 void reservation(void)
 {
     
 }
+
