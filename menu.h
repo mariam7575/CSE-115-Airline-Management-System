@@ -45,6 +45,7 @@ mainMenu:
        flightSchedule();
     else if (mo == 3)
        exitScreen();
+       goto mainMenu;
 }
 void menu(void)
 {
@@ -252,9 +253,10 @@ int checkid(int id)
     for (int i = 0; i < indexx; i++)
         if (pas[i].id == id)
             return i;
-            else
-                return -1;
+            else 
+            return -1;
 }
+        
 
 
 
