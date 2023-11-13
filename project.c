@@ -6,10 +6,10 @@
 #include "menu.h"
 int  splashscreen(void);//for splash screen
 int  username_password(char username[50],char password[50]);//for login option
-void mainMenu(void);
+int mainMenu(void);
 void menu(void);
 int flightSchedule(void);
-void reservation(void);
+int reservation(void);
 void printTicket(void);
 int checkid(int id);
 int  exitScreen(void);
@@ -22,25 +22,20 @@ int main(void)
     char username[50];
  char password[50];
  int login_success=0;
- do
- {
+ do{
 printf("Enter required username:\n");
 gets(username);
 printf("Enter your password:\n");
 gets(password);
 login_success=username_password(username,password);
- } while (login_success==0);
+ }while (login_success==0);//ask for the username and password
  mainMenu();
  menu();
 flightSchedule();
- reservation();
+reservation();
 printTicket();
-checkid(-1);
+checkid(0);
 exitScreen();
 return 0;
 }
-
-
-
-
 
