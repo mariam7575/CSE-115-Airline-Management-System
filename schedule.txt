@@ -1,8 +1,8 @@
-AIRLINE--------------ROUTE--------------TIME
---------------------------------------------
-1.BG-093               DAC-CCU            11:50 am
-2.BG-095               LON-DAC            04:30 pm
-3.BG-093               ZYL-DAC            12:30 am
-4.BG-093               CGP-DAC            10:30 am
-5.BG-093               CGP-CCU            01:30 pm
+                      AIRLINE--------------ROUTE--------------TIME
+                      --------------------------------------------
+                    1.BG-093               DAC-CCU            11:50 am
+                    2.BG-095               LON-DAC            04:30 pm
+                    3.BG-093               ZYL-DAC            12:30 am
+                    4.BG-093               CGP-DAC            10:30 am
+                    5.BG-093               CGP-CCU            01:30 pm
          

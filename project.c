@@ -6,13 +6,13 @@
 #include "menu.h"
 int  splashscreen(void);//for splash screen
 int  username_password(char username[50],char password[50]);//for login option
-int mainMenu(void);
-void menu(void);
+void mainMenu(void);//menu driven
+void menu(void);//menu for reservation
 int flightSchedule(void);
 int reservation(void);
 void printTicket(void);
 int checkid(int id);
-int  exitScreen(void);
+int  exitScreen(void);//exiting the screen
 int main(void)
 {
     splashscreen();

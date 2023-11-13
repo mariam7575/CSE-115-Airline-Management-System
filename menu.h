@@ -27,7 +27,7 @@ int  reservation(void);
 int flightSchedule(void);
 int exitScreen(void);
 void printTicket(void);
-int mainMenu(void)
+void mainMenu(void)
 {
     printf("\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t*** Welcome to the Airline Reservation System ***\n\n");
     printf("\t\t\t\t\t\t\t\t--------------------------------------------\n\n");
@@ -94,7 +94,7 @@ int exitScreen(void)
     fclose(ptr);
     return 0;
 }
-int reservation(void)
+int reservation(void)//the reservation system
 {
 int po3=0;
 do{
@@ -218,7 +218,7 @@ if (choice1 == 1)
 po3=reservation();
 }while(po3==0);
 }
-void printTicket(void)
+void printTicket(void)//for printing ticket
 {
     printf("\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\tEnter Your Passenger ID:     ");
     int id;
@@ -242,7 +242,7 @@ void printTicket(void)
         }
     menu();
 }
-int checkid(int id)
+int checkid(int id)//id check for tickets
 {
     for (int i = 0; i < indexx; i++)
         if (pas[i].id == id)
