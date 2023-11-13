@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
 #define PASSENGERS 30
 typedef struct //STRUCTURE
 {
@@ -44,6 +46,9 @@ void mainMenu(void)
        flightSchedule();
     else if (mo==3)
      exitScreen();
+      sleep(5);
+     system("cls");
+     sleep(2);
 }
 void menu(void)
 {
