@@ -5,7 +5,7 @@
 #include "login.h"
 #include "menu.h"
 int  splashscreen(void);//for splash screen
-void username_password(char username[50],char password[50]);//for login option
+int  username_password(char username[50],char password[50]);//for login option
 void mainMenu(void);
 void menu(void);
 int flightSchedule(void);
@@ -21,11 +21,15 @@ int main(void)
     sleep(2);
     char username[50];
  char password[50];
+ int login_success=0;
+ do
+ {
 printf("Enter required username:\n");
 gets(username);
 printf("Enter your password:\n");
 gets(password);
-username_password(username,password);
+login_success=username_password(username,password);
+ } while (login_success==0);
  mainMenu();
  menu();
 flightSchedule();
